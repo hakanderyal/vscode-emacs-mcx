@@ -201,6 +201,13 @@ export function activate(context: vscode.ExtensionContext) {
       executeCommands(args[0]);
     }
   });
+  
+  return {
+    isInMarkMode: () => {
+      const emulator = getAndUpdateEmulator();
+      return emulator.isInMarkMode
+    }
+  }
 }
 
 // this method is called when your extension is deactivated
